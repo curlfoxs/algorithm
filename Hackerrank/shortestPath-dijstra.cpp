@@ -22,7 +22,7 @@ void solve() {
     }
     int s;
     cin >> s, --s;
-    memset(d, 0x3f, sizeof(d));
+    memset(d, 0x3f, sizeof(d)); // init inf
     d[s]=0;
     priority_queue<ar<ll, 2>, vector<ar<ll, 2>>, greater<ar<ll, 2>>> pq; // {distance, target}
     pq.push({0, s});

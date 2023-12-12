@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.8)
+project(LruCache)
+
+# 设置C++标准为C++17
+set(CMAKE_CXX_STANDARD 17)
+# 如果希望确保不使用比C++17更高版本的标准，也可以设置这个选项来避免向前兼容
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# 如果不希望CMake为你选择特定的编译器标志，而是明确要求使用该标准，可以设置这个选项
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+
+include_directories(.)
+
+aux_source_directory(. SOURCE_FILES)
+file(GLOB_RECURSE HEAD_FILES "./*.h" "./*.hpp")
+
+set(PROJECT_SRC
+  ${SOURCE_FILES}
+  ${HEAD_FILES}
+)
+add_executable("LruCache" ${PROJECT_SRC})
